@@ -67,7 +67,7 @@
             <h1 class="hero-title" lang="en">beauty <br> zone</h1>
           </div>
           <div class="beauty-second-part">
-            <button class="button" type="button">Замовити дзвінок</button>
+            <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
             <p class="beauty-text-second">
               Запишись та отримай безкоштовну консультацію нашого косметолога
             </p>
@@ -77,7 +77,7 @@
     </section>
 
 
-    <section class="section" id="about-section">
+    <section class="section exstra" id="about-section">
       <!-- ABOUT US -->
       <div class="container">
         <div class="about-container">
@@ -93,21 +93,24 @@
             <p>
               B <span class="accent-dark">beauty zone</span> ми гарантуємо найвищі
               стандарти якості та приємний сервіс. Наші косметологічні процедури та
-              препарати допоможуть вам підтримувати свою красу та молодість. З нами
+              препарати допоможуть вам підтримувати свою красу та молодість. <br>З нами
               краса назавжди!
             </p>
           </div>
           <!-- PHOTO RESULT -->
-          <ul class="result-list">
-            <li>
-              <img class="result-photo result-before" src="./images/result-before.jpg" alt="Жінка до процедури"
-                width="327px" height="327px" />
-            </li>
-            <li>
-              <img class="result-photo result-after" src="./images/result-after.jpg" alt="Жінка після процедури"
-                width="327px" height="327px" />
-            </li>
-          </ul>
+          <div class="about-content-photo">
+            <ul class="result-list">
+              <li class="about-photo-item-before">
+                <img class="result-photo result-before" src="./images/result-before.jpg" alt="Жінка до процедури"
+                  width="327px" height="327px" />
+              </li>
+              <li class="about-photo-item-after">
+                <img class="result-photo result-after" src="./images/result-after.jpg" alt="Жінка після процедури"
+                  width="327px" height="327px" />
+              </li>
+            </ul>
+            <div class="about-for-little-star"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -117,7 +120,7 @@
       <div class="container">
         <h2 class="advantages-title section-title centered">
           Чому люди
-          <span class="accent-light">обирають нас</span>
+          <br><span class="accent-light">обирають нас</span>
         </h2>
         <div class="advantages-container">
           <ul class="advantages-list">
@@ -191,7 +194,7 @@
               </article>
             </li>
           </ul>
-          <button class="carousel-button" type="button">
+          <button class="carousel-button next" type="button">
             <svg width="16" height="16">
               <use href="./images/icons.svg#icon-arrow"></use>
             </svg>
@@ -209,10 +212,35 @@
         <div class="contact-container">
           <iframe class="contact-map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.9325719461126!2d30.5181753!3d50.4423566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef8b5f6338d%3A0x25c7f06ad686451c!2z0LHRg9C7LiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQviwgNSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1699361574939!5m2!1sru!2sua"
-            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            width="600" height="480" style="border: 0" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="contact-form">
+          <div class="contact-modal-form">
             <!-- FORM -->
+            <p class="contact-form-text">Запишіться <span class="accent-modal">безкоштовно</span> <br>та отримайте
+              подарунок</p>
+            <form class="contact-form" autocomplete="off">
+              <div class="contact-form-field">
+                <label class="form-label" for="user-name"></label>
+                <input class="form-input" type="text" name="user-name" id="user-name"
+                  placeholder="Ваше ім'я та прізвище" minlength="5" maxlength="30" required
+                  pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$" />
+              </div>
+
+              <div class="contact-form-field">
+                <label class="form-label" for="user-tel"></label>
+                <input class="form-input" type="tel" name="user-tel" id="user-tel" placeholder="Ваш номер телефону"
+                  required pattern="^\+[0-9]{12}" />
+              </div>
+
+              <div class="contact-form-field">
+                <label class="form-label" for="user-email"></label>
+                <input class="form-input" type="email" name="user-email" id="user-email"
+                  placeholder="Ваша електронна пошта" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+              </div>
+              <button class="form-button button" type="submit">Записатись безкоштовно</button>
+              <p class="form-terms">Натискаючи на кнопку я погоджуюсь з <a class="form-terms-link" href="#">політикою
+                  конфіденційності</a></p>
+            </form>
           </div>
         </div>
       </div>
@@ -286,27 +314,32 @@
     </div>
   </footer>
 
-  <div class="backdrop">
+  <div class="backdrop is-hidden">
     <div class="modal">
-      <button class="modal-btn-close">Close</button>
-      <h2>Замовити дзвінок</h2>
-      <p>Запишіться безкоштовно та отримайте подарунок</p>
+      <button class="modal-btn-close" type="button">Close</button>
+      <div class="modal-text-section">
+        <h2 class="modal-title">Замовити дзвінок</h2>
+        <p class="modal-text">Запишіться <span class="accent-modal">безкоштовно</span> <br> та отримайте подарунок</p>
+      </div>
       <form class="modal-form" autocomplete="off" novalidate>
         <div class="form-field">
           <label class="form-label" for="user-name"></label>
-          <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я" />
+          <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ваше ім'я та прізвище"
+            required pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$" />
         </div>
 
         <div class="form-field">
           <label class="form-label" for="user-tel"></label>
-          <input class="form-input" type="tel" name="user-tel" id="user-tel" placeholder="Телефон" />
+          <input class="form-input" type="tel" name="user-tel" id="user-tel" placeholder="Ваш номер телефону" required
+            pattern="^\+[0-9]{12}" />
         </div>
 
         <div class="form-field">
           <label class="form-label" for="user-email"></label>
-          <input class="form-input" type="email" name="user-email" id="user-email" placeholder="Електронна пошта" />>
+          <input class="form-input" type="email" name="user-email" id="user-email" placeholder="Ваша електронна пошта"
+            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
         </div>
-        <button class="form-button button" type="submit">Замовити дзвінок</button>
+        <button class="form-button button" type="submit">Записатись безкоштовно</button>
         <p class="form-terms">Натискаючи на кнопку я погоджуюсь з <a class="form-terms-link" href="#">політикою
             конфіденційності</a></p>
       </form>
